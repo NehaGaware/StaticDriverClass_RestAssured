@@ -1,11 +1,11 @@
-package CommonFunctionsPackage;
+package sharedfunctions;
 
 import static io.restassured.RestAssured.given;
 
 import io.restassured.RestAssured;
 import requestRepositoryPackage.Post_req_repository;
 
-public class API_Common_Function {
+public class ApiSharedFunctions {
 	
 	public static int response_statusCode(String baseURI,String resource,String requestbody) {
 		RestAssured.baseURI=baseURI;

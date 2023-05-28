@@ -1,22 +1,23 @@
-package testClassPackage;
+package testclass;
 
 import java.time.LocalDateTime;
 
 import org.testng.Assert;
-import CommonFunctionsPackage.API_Common_Function;
+
 import io.restassured.path.json.JsonPath;
 import requestRepositoryPackage.Post_req_repository;
+import sharedfunctions.ApiSharedFunctions;
 
-public class Post_tc_1 {
+public class PostTestCase {
 	
 	public static void execute(){
 	 for (int i=0; i<5; i++)
 		{
-		int res_status_code =API_Common_Function.response_statusCode(Post_req_repository.base_URI(),Post_req_repository.post_resource(),Post_req_repository.Post_req_tc_1());
+		int res_status_code =ApiSharedFunctions.response_statusCode(Post_req_repository.base_URI(),Post_req_repository.post_resource(),Post_req_repository.Post_req_tc_1());
 		if (res_status_code==201)
 		{
-		 String responsebody = API_Common_Function.response_body(Post_req_repository.base_URI(), Post_req_repository.post_resource(),Post_req_repository.Post_req_tc_1());
-		 Post_tc_1.validator(responsebody, res_status_code);
+		 String responsebody = ApiSharedFunctions.response_body(Post_req_repository.base_URI(), Post_req_repository.post_resource(),Post_req_repository.Post_req_tc_1());
+		 PostTestCase.validator(responsebody, res_status_code);
 		 break;
 		}
 		else
